@@ -49,26 +49,26 @@
 &nbsp;
 
 # 2. API 호출 도구
-[*.. contents*](#contents)&nbsp;
+[*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405900/End+Point)
 > API 조작 Tool
 > [End Point](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405900/End+Point) 라 명명.
 제대로 구현된 건 아직 없는 듯 하고 계속 업데이트 하는 단계인 듯.
 
- * [__API Command Window__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405890/CIVIL+API+Command+window?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9)&nbsp;
+ * [__API Command Window__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405890/CIVIL+API+Command+window?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9)  
 프로그램 내부 명령해 활용. 사용자가 제품의 변화를 직접 볼 수 있는 장점이 있다.
- * [__API Set command File__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1115750505/API+Set+Command+File?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9)&nbsp;
+ * [__API Set command File__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1115750505/API+Set+Command+File?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9)  
 입력 JSON파일 지정 시, 파일 내의 문법에 따라 자동 실행되는 batch 파일 개념.
- * [__Global Command, GCMD__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1118077053/GCMD?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9)&nbsp;
+ * [__Global Command, GCMD__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1118077053/GCMD?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9  
 일반적인 터미널 이라고 생각하면 될듯하다.
 
 &nbsp;
 
 # 3. API 문법 및 명령 규칙
 [*.. contents*](#contents)
-> 기본 명령어는 라인 단위로 처리 된다.
-Query, Fuction, Action 세가지로 구분된다.
-Query + Function은 조합이 가능하지만, Action은 단독으로만 쓸 수 있다.
+> 기본 명령어는 라인 단위로 처리 된다.  
+Query, Fuction, Action 세가지로 구분된다.  
+Query + Function은 조합이 가능하지만, Action은 단독으로만 쓸 수 있다.  
 
 ***
 
