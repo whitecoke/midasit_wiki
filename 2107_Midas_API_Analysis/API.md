@@ -33,7 +33,7 @@
 &nbsp;
 
 # 1. 마이다스 API란?
-[*.. contents*](#contents)&nbsp;
+[*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116373064/API)
 > midas application programming interface
 프로그래밍 Interface...
