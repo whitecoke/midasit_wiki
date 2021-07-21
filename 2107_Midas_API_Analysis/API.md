@@ -2,11 +2,11 @@
 ###### 해당 article에 내용이 정리되어 있지 않은 부분은 별도 link를 달아 두었습니다.
 
 ### [1. 마이다스 API란?](#마이다스-api란)
-### 2. API 호출 도구 (End Point)
+### [2. API 호출 도구 (End Point)](#api-호출-도구)
 1. API Command Window (제품 내 커맨드창)
 2. API Set command File (Batch 파일)
 3. Global Command, GCMD (터미널 확장)
-### 3. API 문법 및 명령 규칙
+### [3. API 문법 및 명령 규칙](#api-문법-및-명령-규칙)
 1. __Query__
    1. LVALUE
    2. OPERATOR
@@ -17,15 +17,15 @@
       + `Query Struct (?=)`
    3. RVALUE
 2. __Function__
-    1. [*__Function for Python__*](https://github.com/whitecoke/midasit_wiki/discussions/4)
-    2. [*__Function for MAPI__*]()
-    3. [*__Excel Sheet Function__*]()
+    1. ~~Function for Python~~
+    2. ~~Function for MAPI~~
+    3. ~~Excel Sheet Function~~
 3. __Action__
     + Civil Doc Action List
-### 4. 베타 개발 항목들
-1. [*__Civil API (Prototype)__*]()
-2. [*__Civil Command Line__*]()
-3. [*__API Service__*]()
+### [4. 베타 개발 항목들]()
+1. Civil API (Prototype)
+2. Civil Command Line
+3. API Service
  ### 5. 참고문서
 + [*__API 데이터 개념 이해__*]()
 &nbsp;
@@ -67,6 +67,8 @@ Query + Function은 조합이 가능하지만, Action은 단독으로만 쓸 수
 
 &nbsp;
 
+***
+
 ## Query?
 데이터 생성/수정, 조회가 가능하다.
 기본적인 형태는 다음과 같다.
@@ -76,7 +78,8 @@ DB.NODE.1 += {"X":0, "Y":0, "Z":0}
 ```
 &nbsp;
 
- * __LVAULE__ Target
+#### __LVAULE__ 
+###### Target
 ```cpp
 DB.NODE.1
 //DB,   Category (범주)
@@ -96,7 +99,8 @@ Name (데이터 이름)의 경우 우측 문서 참고, [API Data Reference](htt
 ```
 &nbsp;
 
- * __OPERATOR__ Operation 행위, 일반적인 [CRUD](https://ko.wikipedia.org/wiki/CRUD)의 동작부와 유사. 
+#### __OPERATOR__ 
+###### Operation 행위, 일반적인 [CRUD](https://ko.wikipedia.org/wiki/CRUD)의 동작부와 유사. 
 
 | Subject | Operator | Description |
 | :---: | :---: | :---: |
@@ -161,51 +165,73 @@ LVALUE ?= // 기본 ... 구조
 
 > NODE ?=
 ```
-&nbsp;
 
- * RVALUE Value (값)
+***
+#### RVALUE Value 
+###### Value
 > 위 "@ OPERATOR"에서 언급 했듯이 '__+=__'와 '__*=__'를 사용할 수 있다.
 JSON 객체 또는 변수의 값이 될 수 있으므로 [JSON 문법](https://midasitdev.atlassian.net/wiki/spaces/~673925652/pages/932708405/JSON)을 준수 해야한다.
+***
 
-&nbsp;
-
-## Function (for Python) [Confluence Doc](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116045441?atlOrigin=eyJpIjoiNDY0MGQyNmI2MGNiNGNlYWFmMTE1MzIxNzU3ODE1ODgiLCJwIjoiYyJ9)
+## Function (for Python)
+[*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116045441?atlOrigin=eyJpIjoiNDY0MGQyNmI2MGNiNGNlYWFmMTE1MzIxNzU3ODE1ODgiLCJwIjoiYyJ9)
 > Python 확장 모듈을 호출 할 수 있는 명령
 Python 확장 모듈을 사용하기 위해서는 미리 정의된 모듈이 존재해야 한다.
+제품에서 배포하는 모듈은 실행파일 설치 경로의 PYMODULE 경로에 있다.
+사용자 작성 모듈 역시 동일한 경로에 배치 되어야 한다.
 
 ```cpp
 PY.Calculator.Center(DB.NODE)
-// PY - MODULE - FUNC - LVALUE PARAM
+// BASE   PY - MODULE - FUNC - LVALUE PARAM
+// PY     Python 확장 모듈을 이용하겠다는 선언
+// MODULE Python 스크립트 파일 이름 선택
+// FUNC   Python 스크립트 파일 내 함수명 선택
+// PARAM  함수에 넘길 파라미터 전달
 ```
 
-> * __Py__
+`Py`
 Python 확장 모듈 함수 호출 카테고리
-&nbsp;
-> * __Module__
+
+`Module`
 Python 모듈 이름 (Python 파일 이름)
-&nbsp;
-> * __Func__
+
+`Func`
 Python 함수 이름
-&nbsp;
-> * __LValue Param__
+
+`LValue Param`
 Query와 동일한 LVALUE
 LVALUE를 매개변수로 넣는다면 LVALUE의 평가값이 파라미터로 처리된다. (==JSON Data)
 
-> __Return__ (함수의 반환값)
+`Return` (함수의 반환값)
 Python 확장 모듈 함수의 경우 반환값이 존재하기 때문에 대입 연산도 가능하다.
 아래와 같이 사용할 수 있다.
 ```cpp
 DB.NODE.1 += PY.Calculator.Center(DB.NODE)
 // LVALUE - OPERATOR - RVALUE (Python 모듈의 반환값)
 ```
+
+명령을 수행하는 예는 다음과 같다.
+```cpp
+//Calculator.py 파일
+def Center(jsonStr):
+    ...
+```
+위와 같은 Python 스크립트가 있고 내부에 함수 Center가 존재한다면,
+API 명령 도구를 이용해 `PY.Calculator.Center(NODE)`와 같이 입력하면 정상동작 한다.
+여기서, `NODE`와 같은 기존 `LVALUE`도 이용할 수 있다.
+
+###### Regular Expression (정규식)에 대한 고민도 하고 계신 듯 하다.
+
 &nbsp;
 
-## Function (for MAPI) [Confluence Doc](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1117913185)
+## Function (for MAPI) 
+[*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1117913185)
 > Python 확장 모듈과는 별개로 제품 내 명령 윈도우창을 활용해서 Command를 할 수 있다.
 
 &nbsp;
 
-## Action [Confluence Doc](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1115979893)
+## Action 
+[*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1115979893)
 > 제품의 동작을 제어 할 수 있는 명령
 ```cpp
 [Enable Action List]
