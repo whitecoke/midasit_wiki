@@ -18,7 +18,7 @@
 2. [Function](#function)
     1. [Function for Python](#function-for-python)
     2. [Function for MAPI](#function-for-mapi)
-    3. ~~Excel Sheet Function~~
+    3. [Excel Sheet Function](#function-for-Excel-Sheet-concept)
 3. [Action](#action)
     + [Civil Doc Action List](#civil-doc-action-list)
 ### [4. 진행되어 있는 개발 항목](#4-진행되어-있는-개발-항목)
@@ -244,6 +244,44 @@ API 명령 도구를 이용해 `PY.Calculator.Center(NODE)`와 같이 입력하�
 [*.. contents*](#contents)
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1117913185)
 > Python 확장 모듈과는 별개로 제품 내 명령 윈도우창을 활용해서 Command를 할 수 있다.
+
+&nbsp;
+
+#### Function (for Excel Sheet) concept
+[*.. contents*](#contents)
+[*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1184006157/EXCEL+SHEET+FUNCTION+REPORT)
+> Excel을 활용한 간단한 계산, 계산서 Concept
+
+현재 검토 단계이며 이것저것 시도 해보고 있는 중 인듯함.
+
+* __사용자가 Excel Form으로 만든 계산식에 Civil 데이터를 넣어 계산이 가능한가?__
+Python 스크립트를 이용해서 가능성을 검토한 결과 O.K
+
+근데 위처럼 하려면, 사용자가 Excel도 하고 Python도 다를 수있어야 함.
+실제 대부분의 사용자들은 엑셀을 잘 다루는 사람이 더 많을테니 다른 방법도 고민.
+
+* __Python 연결부 스크립트는 우리가 제공하고, Excel 계산을 연결시켜주자__
+우리가 표준화된 Excel Sheet를 제공하고, 해당 Sheet에서 사용자가 직접 수정할 수 있도록 하자.
+
+```cpp
+> PY.MIDAS.EXCEDGN(Excel Path)
+// 예상해보자면 이런 명령어?
+```
+사실 위 아이디어처럼 구현 한다면 궂이 Python을 추가도 설치하지 않고도,
+기존에 설치 된 C++/C#을 이용하는 것도 한 방법이 될 수 있다.
+결국 사용자 입장에서 더 편할 수도 있다는 것이다.
+사용자의 접근성과 프로그램의 안정성 측면에서도 우위를 차지하고 있는 듯 하며,
+해당 방식이 유리한 것으로 보여진다.
+
+추가로,
+* __공유 된 `Excel Data`(계산식, 보고서, 계산서 등)를 활용할 수 있는 Platform?__
+우리(마이다스)는 `공유자`에 의해 작성된 `Data`를 검증하여 업로드 해주고,
+해당 `Data`를 사용하는 `USER`의 이용량에 따라 이익을 배분 한다.
+그럼 `공유자`도 본인의 이익을 위해 질 좋은 데이터를 업로드 할 것이고
+`USER`들은 양질의 `Data`를 받아 사용할 수 있게 된다.
+
+
+
 
 ***
 
