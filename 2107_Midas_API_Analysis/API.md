@@ -41,10 +41,10 @@
  * `USER` 제품에 데이터를 많이 입력한다.
  * `PRODUCT`  사용자로부터 데이터를 많이 입력 받는다.
 
-따라서 사용자가 입력 데이터를 직접 __생성/수정/삭제__ 하도록 만들어 주자.&nbsp;
-사용자는 기능 개발을 기다리지 않아도 되고&nbsp;
-우리도 역할을 분리함으로써 데이터 정의와 간단한 구현에 집중 할 수 있다.&nbsp;
-~~추후에는 기능도 USER가 직접...~~
+따라서 사용자가 입력 데이터를 직접 __생성/수정/삭제__ 하도록 만들어 주자.  
+사용자는 기능 개발을 기다리지 않아도 되고  
+우리도 역할을 분리함으로써 데이터 정의와 간단한 구현에 집중 할 수 있다.  
+~~추후에는 기능도 USER가 직접...~~  
 
 &nbsp;
 
@@ -59,7 +59,7 @@
 프로그램 내부 명령해 활용. 사용자가 제품의 변화를 직접 볼 수 있는 장점이 있다.
  * [__API Set command File__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1115750505/API+Set+Command+File?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9)  
 입력 JSON파일 지정 시, 파일 내의 문법에 따라 자동 실행되는 batch 파일 개념.
- * [__Global Command, GCMD__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1118077053/GCMD?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9  
+ * [__Global Command, GCMD__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1118077053/GCMD?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9)  
 일반적인 터미널 이라고 생각하면 될듯하다.
 
 &nbsp;
@@ -73,9 +73,9 @@ Query + Function은 조합이 가능하지만, Action은 단독으로만 쓸 수
 ***
 
 ## Query
-[*.. contents*](#contents)
-데이터 생성/수정, 조회가 가능하다.&nbsp;
-기본적인 형태는 다음과 같다.
+[*.. contents*](#contents)  
+데이터 생성/수정, 조회가 가능하다.  
+기본적인 형태는 다음과 같다.  
 ```cpp
 DB.NODE.1 += {"X":0, "Y":0, "Z":0}
 //LVALUE - OPERATOR - RVALUE의 구조를 가지고 있다.
@@ -92,7 +92,7 @@ DB.NODE.1
 //1,    ID (아이디)
 ```
 
-Name (데이터 이름)의 경우 우측 문서 참고, [API Data Reference](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1118076993/API+Data+Reference?atlOrigin=eyJpIjoiNmZhM2Q3NDFlM2I3NGM5NDhiYjJjM2M1NzdiMTQ4MGQiLCJwIjoiYyJ9)&nbsp;
+Name (데이터 이름)의 경우 우측 문서 참고, [API Data Reference](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1118076993/API+Data+Reference?atlOrigin=eyJpIjoiNmZhM2Q3NDFlM2I3NGM5NDhiYjJjM2M1NzdiMTQ4MGQiLCJwIjoiYyJ9)  
 추가적으로, ID 이하 레벨도 아래와 같이 접근이 가능하다.
 ```cpp
 > NODE             // 'Name'
@@ -125,9 +125,9 @@ LVALUE // 기본 조회 구조
 | Subject | Operator | Description |
 | :---: | :---: | :---: |
 | CREATE | += | 생성, '+=' 연산자를 이용해 데이터를 생성한다. |
-> LVALUE Target에 필수적인 구조를 완결성 있게 제공해야 한다.
-데이터 구조 최하위 변수 값을 생성 할 때에는 실제 Type과 일치하는지 확인해야 한다.
-만약 NODE의 좌표값이 __정수형__이라면 __실수__와 같은 값을 입력하면 안된다.
+> LVALUE Target에 필수적인 구조를 완결성 있게 제공해야 한다.  
+데이터 구조 최하위 변수 값을 생성 할 때에는 실제 Type과 일치하는지 확인해야 한다.  
+만약 NODE의 좌표값이 __정수형__이라면 __실수__와 같은 값을 입력하면 안된다.  
 ###### 지금은 InsertAt (특정 위치에 데이터를 생성)만 구현된 상태인 듯
 ```cpp
 LVALUE += RVALUE // 기본 생성 구조
@@ -139,9 +139,9 @@ LVALUE += RVALUE // 기본 생성 구조
 | Subject | Operator | Description |
 | :---: | :---: | :---: |
 | UPDATE | *= | 수정, '*=' 연산자를 이용해 데이터를 수정한다. |
-> Create 연산자와 달리 RVALUE의 경우 계층구조에 포함된 일부 변수만으로도 사용할 수 있다.
-데이터 구조 최하위 변수 값을 변경 할 때에는 실제 Type과 일치하는지 확인해야 한다.
-만약 NODE의 좌표값이 __정수형__이라면 __실수__와 같은 값을 입력하면 안된다.
+> Create 연산자와 달리 RVALUE의 경우 계층구조에 포함된 일부 변수만으로도 사용할 수 있다.  
+데이터 구조 최하위 변수 값을 변경 할 때에는 실제 Type과 일치하는지 확인해야 한다.  
+만약 NODE의 좌표값이 __정수형__이라면 __실수__와 같은 값을 입력하면 안된다.  
 ```cpp
 LVAULE *= RVALUE // 기본 수정 구조
 
@@ -177,7 +177,7 @@ LVALUE ?= // 기본 ... 구조
 #### RVALUE
 [*.. contents*](#contents)
 ###### Value
-> 위 "@ OPERATOR"에서 언급 했듯이 '__+=__'와 '__*=__'를 사용할 수 있다.
+> 위 "@ OPERATOR"에서 언급 했듯이 '__+=__'와 '__*=__'를 사용할 수 있다.  
 JSON 객체 또는 변수의 값이 될 수 있으므로 [JSON 문법](https://midasitdev.atlassian.net/wiki/spaces/~673925652/pages/932708405/JSON)을 준수 해야한다.
 
 &nbsp;
@@ -191,12 +191,12 @@ JSON 객체 또는 변수의 값이 될 수 있으므로 [JSON 문법](https://m
 &nbsp;
 
 #### Function (for Python)
-[*.. contents*](#contents)&nbsp;
+[*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116045441?atlOrigin=eyJpIjoiNDY0MGQyNmI2MGNiNGNlYWFmMTE1MzIxNzU3ODE1ODgiLCJwIjoiYyJ9)
-> Python 확장 모듈을 호출 할 수 있는 명령
-Python 확장 모듈을 사용하기 위해서는 미리 정의된 모듈이 존재해야 한다.
-제품에서 배포하는 모듈은 실행파일 설치 경로의 PYMODULE 경로에 있다.
-사용자 작성 모듈 역시 동일한 경로에 배치 되어야 한다.
+> Python 확장 모듈을 호출 할 수 있는 명령  
+Python 확장 모듈을 사용하기 위해서는 미리 정의된 모듈이 존재해야 한다.  
+제품에서 배포하는 모듈은 실행파일 설치 경로의 PYMODULE 경로에 있다.  
+사용자 작성 모듈 역시 동일한 경로에 배치 되어야 한다.  
 
 ```cpp
 PY.Calculator.Center(DB.NODE)
@@ -207,80 +207,80 @@ PY.Calculator.Center(DB.NODE)
 // PARAM  함수에 넘길 파라미터 전달
 ```
 
-`Py`&nbsp;
-Python 확장 모듈 함수 호출 카테고리&nbsp;
+`Py`  
+Python 확장 모듈 함수 호출 카테고리  
 
-`Module`&nbsp;
-Python 모듈 이름 (Python 파일 이름)&nbsp;
+`Module`  
+Python 모듈 이름 (Python 파일 이름)  
 
-`Func`&nbsp;
-Python 함수 이름&nbsp;
+`Func`  
+Python 함수 이름    
 
-`LValue Param`&nbsp;
-Query와 동일한 LVALUE&nbsp;
-LVALUE를 매개변수로 넣는다면 LVALUE의 평가값이 파라미터로 처리된다. (==JSON Data)&nbsp;
+`LValue Param`  
+Query와 동일한 LVALUE  
+LVALUE를 매개변수로 넣는다면 LVALUE의 평가값이 파라미터로 처리된다. (==JSON Data)  
 
-`Return` (함수의 반환값)&nbsp;
-Python 확장 모듈 함수의 경우 반환값이 존재하기 때문에 대입 연산도 가능하다.&nbsp;
-아래와 같이 사용할 수 있다.
+`Return` (함수의 반환값)  
+Python 확장 모듈 함수의 경우 반환값이 존재하기 때문에 대입 연산도 가능하다.  
+아래와 같이 사용할 수 있다.  
 ```cpp
 DB.NODE.1 += PY.Calculator.Center(DB.NODE)
 // LVALUE - OPERATOR - RVALUE (Python 모듈의 반환값)
 ```
 
-명령을 수행하는 예는 다음과 같다.
+명령을 수행하는 예는 다음과 같다.  
 ```cpp
 //Calculator.py 파일
 def Center(jsonStr):
     ...
 ```
-위와 같은 Python 스크립트가 있고 내부에 함수 Center가 존재한다면,&nbsp;
-API 명령 도구를 이용해 `PY.Calculator.Center(NODE)`와 같이 입력하면 정상동작 한다.&nbsp;
-여기서, `NODE`와 같은 기존 `LVALUE`도 이용할 수 있다.&nbsp;
+위와 같은 Python 스크립트가 있고 내부에 함수 Center가 존재한다면,  
+API 명령 도구를 이용해 `PY.Calculator.Center(NODE)`와 같이 입력하면 정상동작 한다.  
+여기서, `NODE`와 같은 기존 `LVALUE`도 이용할 수 있다.  
 
 ###### Regular Expression (정규식)에 대한 고민도 하고 계신 듯 하다.
 
 &nbsp;
 
 #### Function (for MAPI)
-[*.. contents*](#contents)&nbsp;
+[*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1117913185)
 > Python 확장 모듈과는 별개로 제품 내 명령 윈도우창을 활용해서 Command를 할 수 있다.
 
 &nbsp;
 
 #### Function (for Excel Sheet) concept
-[*.. contents*](#contents)&nbsp;
+[*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1184006157/EXCEL+SHEET+FUNCTION+REPORT)
 > Excel을 활용한 간단한 계산, 계산서 Concept
 
 현재 검토 단계이며 이것저것 시도 해보고 있는 중 인듯함.
 
-* __사용자가 Excel Form으로 만든 계산식에 Civil 데이터를 넣어 계산이 가능한가?__&nbsp;
-Python 스크립트를 이용해서 가능성을 검토한 결과 O.K
+* __사용자가 Excel Form으로 만든 계산식에 Civil 데이터를 넣어 계산이 가능한가?__  
+Python 스크립트를 이용해서 가능성을 검토한 결과 O.K  
 
-근데 위처럼 하려면, 사용자가 Excel도 하고 Python도 다를 수있어야 함.&nbsp;
-실제 대부분의 사용자들은 엑셀을 잘 다루는 사람이 더 많을테니 다른 방법도 고민.
+근데 위처럼 하려면, 사용자가 Excel도 하고 Python도 다를 수있어야 함.  
+실제 대부분의 사용자들은 엑셀을 잘 다루는 사람이 더 많을테니 다른 방법도 고민.  
 
-* __Python 연결부 스크립트는 우리가 제공하고, Excel 계산을 연결시켜주자__&nbsp;
-우리가 표준화된 Excel Sheet를 제공하고, 해당 Sheet에서 사용자가 직접 수정할 수 있도록 하자.
+* __Python 연결부 스크립트는 우리가 제공하고, Excel 계산을 연결시켜주자__  
+우리가 표준화된 Excel Sheet를 제공하고, 해당 Sheet에서 사용자가 직접 수정할 수 있도록 하자.  
 
 ```cpp
 > PY.MIDAS.EXCEDGN(Excel Path)
 // 예상해보자면 이런 명령어?
 ```
-사실 위 아이디어처럼 구현 한다면 궂이 Python을 추가도 설치하지 않고도,&nbsp;
-기존에 설치 된 C++/C#을 이용하는 것도 한 방법이 될 수 있다.&nbsp;
-결국 사용자 입장에서 더 편할 수도 있다는 것이다.&nbsp;
-사용자의 접근성과 프로그램의 안정성 측면에서도 우위를 차지하고 있는 듯 하며,&nbsp;
-해당 방식이 유리한 것으로 보여진다.&nbsp;
+사실 위 아이디어처럼 구현 한다면 궂이 Python을 추가도 설치하지 않고도,  
+기존에 설치 된 C++/C#을 이용하는 것도 한 방법이 될 수 있다.  
+결국 사용자 입장에서 더 편할 수도 있다는 것이다.  
+사용자의 접근성과 프로그램의 안정성 측면에서도 우위를 차지하고 있는 듯 하며,  
+해당 방식이 유리한 것으로 보여진다.  
 
 추가로,
-* __공유 된 `Excel Data`(계산식, 보고서, 계산서 등)를 활용할 수 있는 Platform?__&nbsp;
-우리(마이다스)는 `공유자`에 의해 작성된 `Data`를 검증하여 업로드 해주고, &nbsp;
-해당 `Data`를 사용하는 `USER`의 이용량에 따라 이익을 배분 한다. &nbsp;
-그럼 `공유자`도 본인의 이익을 위해 질 좋은 데이터를 업로드 할 것이고 &nbsp;
-`USER`들은 양질의 `Data`를 받아 사용할 수 있게 된다. &nbsp;
+* __공유 된 `Excel Data`(계산식, 보고서, 계산서 등)를 활용할 수 있는 Platform?__  
+우리(마이다스)는 `공유자`에 의해 작성된 `Data`를 검증하여 업로드 해주고,  
+해당 `Data`를 사용하는 `USER`의 이용량에 따라 이익을 배분 한다.  
+그럼 `공유자`도 본인의 이익을 위해 질 좋은 데이터를 업로드 할 것이고  
+`USER`들은 양질의 `Data`를 받아 사용할 수 있게 된다.  
 
 &nbsp;
 
@@ -290,7 +290,7 @@ Python 스크립트를 이용해서 가능성을 검토한 결과 O.K
 &nbsp;
 
 ## Action 
-[*.. contents*](#contents)&nbsp;
+[*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1115979893)
 > 제품의 동작을 제어 할 수 있는 명령
 
@@ -311,12 +311,12 @@ ANAL       // Analysis Excution
 &nbsp;
 
 ## 4. 진행되어 있는 개발 항목
-[*.. contents*](#contents)&nbsp;
+[*.. contents*](#contents)  
 
 &nbsp;
 
 ## 5. 참고
-[*.. contents*](#contents)&nbsp;
+[*.. contents*](#contents)  
 
 &nbsp;
 &nbsp;
