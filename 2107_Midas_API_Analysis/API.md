@@ -1,5 +1,4 @@
 # CONTENTS
-###### 해당 article에 내용이 정리되어 있지 않은 부분은 별도 link를 달아 두었습니다.
 
 ### [1. 마이다스 API란?](#1-마이다스-api란)
 ### [2. API 호출 도구 (End Point)](#2-api-호출-도구)
@@ -26,8 +25,11 @@
 1. Civil API (Prototype)
 2. Civil Command Line
 3. API Service
- ### 5. 참고문서
-+ [*__API 데이터 개념 이해__*]()
+ ### [5. 참고](#5-참고문서)
++ API 데이터 개념 이해
+
+&nbsp;
+***
 &nbsp;
 
 # 1. 마이다스 API란?
@@ -267,6 +269,11 @@ ANAL       // Analysis Excution
 &nbsp;
 
 ## 4. 진행되어 있는 개발 항목
+[*.. contents*](#contents)
+
+&nbsp;
+
+## 5. 참고
 [*.. contents*](#contents)
 
 &nbsp;
