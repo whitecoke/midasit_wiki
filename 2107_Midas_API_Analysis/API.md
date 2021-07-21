@@ -1,4 +1,4 @@
-# Summary
+# CONTENTS
 ###### 해당 article에 내용이 정리되어 있지 않은 부분은 별도 link를 달아 두었습니다.
 
 ### [1. 마이다스 API란?](#마이다스-api란)
@@ -30,7 +30,8 @@
 + [*__API 데이터 개념 이해__*]()
 &nbsp;
 
-# 마이다스 API란? 
+# 마이다스 API란?
+[🔝](#contents)
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116373064/API)
 > midas application programming interface
 프로그래밍 Interface...
@@ -64,8 +65,6 @@
 > 기본 명령어는 라인 단위로 처리 된다.
 Query, Fuction, Action 세가지로 구분된다.
 Query + Function은 조합이 가능하지만, Action은 단독으로만 쓸 수 있다.
-
-&nbsp;
 
 ***
 
@@ -166,7 +165,8 @@ LVALUE ?= // 기본 ... 구조
 > NODE ?=
 ```
 
-***
+&nbsp;
+
 #### RVALUE Value 
 ###### Value
 > 위 "@ OPERATOR"에서 언급 했듯이 '__+=__'와 '__*=__'를 사용할 수 있다.
@@ -222,13 +222,13 @@ API 명령 도구를 이용해 `PY.Calculator.Center(NODE)`와 같이 입력하�
 
 ###### Regular Expression (정규식)에 대한 고민도 하고 계신 듯 하다.
 
-&nbsp;
+***
 
 ## Function (for MAPI) 
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1117913185)
 > Python 확장 모듈과는 별개로 제품 내 명령 윈도우창을 활용해서 Command를 할 수 있다.
 
-&nbsp;
+***
 
 ## Action 
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1115979893)
