@@ -21,12 +21,12 @@
     3. [Excel Sheet Function](#function-for-excel-sheet-concept)
 3. [Action](#action)
     + [Civil Doc Action List](#civil-doc-action-list)
-### [4. 진행되어 있는 개발 항목](#4-진행되어-있는-개발-항목)
-1. Civil API (Prototype)
-2. Civil Command Line
-3. API Service
+### [4. Civil API](#4-civil-api)
+1. [Civil API Concept](#civil-api-concept)
+2. [Civil API Setting](#civil-api-setting)
+3. [Civil API Excution](#civil-api-excution)
  ### [5. 참고](#5-참고문서)
-+ API 데이터 개념 이해
++ [API 데이터 정의](#api-데이터-정의)
 
 &nbsp;
 ***
@@ -318,12 +318,92 @@ ANAL       // Analysis Excution
 ***
 &nbsp;
 
-## 4. 진행되어 있는 개발 항목
+# 4. Civil API  
 [*.. contents*](#contents)  
+[*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/648151084/Civil+API+Protytype)
+
+&nbsp;
+
+###Civil API Concept  
+[*.. contents*](#contents)  
+###### Civil의 Export/Impot 기능을 활용해서 Json 형태로 데이터를 관리한다.
+
+![image](img/civil_api.png)  
+
+* __기본적인 규칙__  
+`.mcb` 확장자를 가진 binary file 대신, `json`을 사용한다.  
+`json` 파일 Load/Save는 Export/Import를 이용한다.  
+기본적으로 `json`파일은 civil 데이터에 포함되며, 사용자가 올바르게 입력하면 civil에서 정상적으로 읽을 수 있다.  
+&nbsp;
+* __기본 시나리오 (Import & Excution)__  
+사용자가 `USER GUIDE`를 이해하고 `JSON`파일을 만든다.  
+`CIVIL`에서 `IMPORT`기능을 통해 `JSON`파일을 불러온다.
+사용자는 `CIVIL COMMAND LINE`에 명령을 실행한다.  
+
+```cpp
+`IMPORT`시, 제품에서 행하는 행위는 다음과 같을 것으로 예상된다.
+`CIVIL`은 데이터 관리 객체인 `DATA DRIVER`을 통해 불러온 `JSON`파일을 처리한다.  
+`DATA DRIVER`는 `JSON`파일을 `CIVIL`의 데이터 형태로 저장한다.  
+마지막 줄은 할지 안할지를 잘 모르겠...
+```
+* __기본 시나리오 (Export)__  
+`CIVIL`에서 `USER GUIDE` 근거 한 `JSON`파일을 생성한다.  
+```cpp
+`EXPORT`를 통해 생성한 `JSON`파일은 PRE / POST 로 나뉜다.
+PRE는 Model Data 등
+POST는 해석 결과 등
+```
+
+&nbsp;
+
+## Civil API Setting
+[*.. contents*](#contents)  
+###### Command Line Interface를 이용한다. (With Python 모듈)
+
+ `Civil Command Line`은 `.py` 확장자를 가진 Python 스크립트 파일을 실행할 수 있다.  
+ 제품에서 기본적인 Python 스크립트 파일은 제공한다. (View, Result ...)  
+ 사용자는 Python 스크립트를 작성해 로직을 커스텀 할 수 있다.  
+
+&nbsp;
+
+## Civil API Excution
+[*.. contents*](#contents)  
+###### Command Line Window 를 이용한다. (With Python 모듈)
+
+```cpp
+> Module Type.Method
+// 위와 같은 형태로 입력하면 수행결과가 출력창에 표기 된다.
+
+// 커맨드창에 아래 라인 입력
+> CalCenter.CalCenter
+
+// 아래 결과 출력 됨.
+> CalCenter
+> X:2.5, Y:3.0, Z:1.8
+```
+
+###### Window 터미널을 이용한다. (With Civil Function, ex Analysis...)
+```cpp
+// 단일 명령 입력 방법
+> Civil.exe "Model.json" /py MyPyModule
+
+// 다중 명령 입력 방법
+> 방법을 찾는중.. ㅠㅠ
+```
 
 &nbsp;
 ***
 &nbsp;
 
-## 5. 참고
+# 5. 참고
 [*.. contents*](#contents)  
+
+&nbsp;
+
+## API 데이터 정의  
+[*.. contents*](#contents)  
+[*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1118076993/API+Data+Reference)  
+
+지금까지 정의 된 여러 기본적인 구조체들의 집합체는 있으나,
+해당 내용을 정리하는 것 보다는 현재 Civil에 포진되어 있는 다양한 데이터를
+분석하고 이를 기반으로 새로운 json 데이터를 추출하는게 더 좋아 보임.
