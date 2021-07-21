@@ -35,7 +35,7 @@
 # 1. 마이다스 API란?
 [*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116373064/API)
-> midas application programming interface
+> midas application programming interface  
 프로그래밍 Interface...
 
  * `USER` 제품에 데이터를 많이 입력한다.
@@ -47,13 +47,15 @@
 ~~추후에는 기능도 USER가 직접...~~  
 
 &nbsp;
+***
+&nbsp;
 
 # 2. API 호출 도구
 [*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405900/End+Point)
-> API 조작 Tool
-> [End Point](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405900/End+Point) 라 명명.
-제대로 구현된 건 아직 없는 듯 하고 계속 업데이트 하는 단계인 듯.
+> API 조작 Tool  
+[End Point](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405900/End+Point) 라 명명.  
+제대로 구현된 건 아직 없는 듯 하고 계속 업데이트 하는 단계인 듯.  
 
  * [__API Command Window__](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405890/CIVIL+API+Command+window?atlOrigin=eyJpIjoiZWViODVhYjNiZDllNDg1NTkxZjY4NTRiZWJlNmM2YzMiLCJwIjoiYyJ9)  
 프로그램 내부 명령해 활용. 사용자가 제품의 변화를 직접 볼 수 있는 장점이 있다.
@@ -63,6 +65,8 @@
 일반적인 터미널 이라고 생각하면 될듯하다.
 
 &nbsp;
+***
+&nbsp;
 
 # 3. API 문법 및 명령 규칙
 [*.. contents*](#contents)
@@ -70,7 +74,9 @@
 Query, Fuction, Action 세가지로 구분된다.  
 Query + Function은 조합이 가능하지만, Action은 단독으로만 쓸 수 있다.  
 
+&nbsp;
 ***
+&nbsp;
 
 ## Query
 [*.. contents*](#contents)  
@@ -309,14 +315,15 @@ ANAL       // Analysis Excution
 ```
 
 &nbsp;
+***
+&nbsp;
 
 ## 4. 진행되어 있는 개발 항목
 [*.. contents*](#contents)  
 
 &nbsp;
+***
+&nbsp;
 
 ## 5. 참고
 [*.. contents*](#contents)  
-
-&nbsp;
-&nbsp;
