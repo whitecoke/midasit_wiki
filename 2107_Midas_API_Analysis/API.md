@@ -1,28 +1,28 @@
 # CONTENTS
 ###### 해당 article에 내용이 정리되어 있지 않은 부분은 별도 link를 달아 두었습니다.
 
-### [1. 마이다스 API란?](#마이다스-api란)
-### [2. API 호출 도구 (End Point)](#api-호출-도구)
+### [1. 마이다스 API란?](#1-마이다스-api란)
+### [2. API 호출 도구 (End Point)](#2-api-호출-도구)
 1. API Command Window (제품 내 커맨드창)
 2. API Set command File (Batch 파일)
 3. Global Command, GCMD (터미널 확장)
-### [3. API 문법 및 명령 규칙](#api-문법-및-명령-규칙)
-1. __Query__
-   1. LVALUE
-   2. OPERATOR
+### [3. API 문법 및 명령 규칙](#3-api-문법-및-명령-규칙)
+1. [Query](#query)
+   1. [LVALUE](#lvalue)
+   2. [OPERATOR](#operator)
       + `Read`
       + `Create (+=)`
       + `Update (*=)`
       + `Delete (-=)`
       + `Query Struct (?=)`
-   3. RVALUE
-2. __Function__
-    1. ~~Function for Python~~
-    2. ~~Function for MAPI~~
+   3. [RVALUE](#rvalue)
+2. [Function](#function)
+    1. [Function for Python](#function-for-python)
+    2. [Function for MAPI](#function-for-mapi)
     3. ~~Excel Sheet Function~~
-3. __Action__
-    + Civil Doc Action List
-### [4. 베타 개발 항목들]()
+3. [Action](#action)
+    + [Civil Doc Action List](#civil-doc-action-list)
+### [4. 진행되어 있는 개발 항목](#4-진행되어-있는-개발-항목)
 1. Civil API (Prototype)
 2. Civil Command Line
 3. API Service
@@ -30,8 +30,8 @@
 + [*__API 데이터 개념 이해__*]()
 &nbsp;
 
-# 마이다스 API란?
-[🔝](#contents)
+# 1. 마이다스 API란?
+[*.. contents*](#contents)
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116373064/API)
 > midas application programming interface
 프로그래밍 Interface...
@@ -46,7 +46,8 @@
 
 &nbsp;
 
-# API 호출 도구 
+# 2. API 호출 도구
+[*.. contents*](#contents)
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405900/End+Point)
 > API 조작 Tool
 > [End Point](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116405900/End+Point) 라 명명.
@@ -61,14 +62,16 @@
 
 &nbsp;
 
-# API 문법 및 명령 규칙
+# 3. API 문법 및 명령 규칙
+[*.. contents*](#contents)
 > 기본 명령어는 라인 단위로 처리 된다.
 Query, Fuction, Action 세가지로 구분된다.
 Query + Function은 조합이 가능하지만, Action은 단독으로만 쓸 수 있다.
 
 ***
 
-## Query?
+## Query
+[*.. contents*](#contents)
 데이터 생성/수정, 조회가 가능하다.
 기본적인 형태는 다음과 같다.
 ```cpp
@@ -77,7 +80,8 @@ DB.NODE.1 += {"X":0, "Y":0, "Z":0}
 ```
 &nbsp;
 
-#### __LVAULE__ 
+#### LVALUE
+[*.. contents*](#contents)
 ###### Target
 ```cpp
 DB.NODE.1
@@ -98,7 +102,8 @@ Name (데이터 이름)의 경우 우측 문서 참고, [API Data Reference](htt
 ```
 &nbsp;
 
-#### __OPERATOR__ 
+#### OPERATOR
+[*.. contents*](#contents)
 ###### Operation 행위, 일반적인 [CRUD](https://ko.wikipedia.org/wiki/CRUD)의 동작부와 유사. 
 
 | Subject | Operator | Description |
@@ -167,13 +172,22 @@ LVALUE ?= // 기본 ... 구조
 
 &nbsp;
 
-#### RVALUE Value 
+#### RVALUE
+[*.. contents*](#contents)
 ###### Value
 > 위 "@ OPERATOR"에서 언급 했듯이 '__+=__'와 '__*=__'를 사용할 수 있다.
 JSON 객체 또는 변수의 값이 될 수 있으므로 [JSON 문법](https://midasitdev.atlassian.net/wiki/spaces/~673925652/pages/932708405/JSON)을 준수 해야한다.
+
 ***
 
-## Function (for Python)
+## Function
+[*.. contents*](#contents)
+> Python과 MAPI가 존재한다.
+
+&nbsp;
+
+#### Function (for Python)
+[*.. contents*](#contents)
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1116045441?atlOrigin=eyJpIjoiNDY0MGQyNmI2MGNiNGNlYWFmMTE1MzIxNzU3ODE1ODgiLCJwIjoiYyJ9)
 > Python 확장 모듈을 호출 할 수 있는 명령
 Python 확장 모듈을 사용하기 위해서는 미리 정의된 모듈이 존재해야 한다.
@@ -222,17 +236,22 @@ API 명령 도구를 이용해 `PY.Calculator.Center(NODE)`와 같이 입력하�
 
 ###### Regular Expression (정규식)에 대한 고민도 하고 계신 듯 하다.
 
-***
+&nbsp;
 
-## Function (for MAPI) 
+#### Function (for MAPI)
+[*.. contents*](#contents)
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1117913185)
 > Python 확장 모듈과는 별개로 제품 내 명령 윈도우창을 활용해서 Command를 할 수 있다.
 
 ***
 
 ## Action 
+[*.. contents*](#contents)
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1115979893)
 > 제품의 동작을 제어 할 수 있는 명령
+
+#### Civil Doc Action List
+[*.. contents*](#contents)
 ```cpp
 [Enable Action List]
 NEW        // New Project
@@ -244,3 +263,11 @@ IMPORT     // Import JSON File
 EXPORT     // Export JSON File
 ANAL       // Analysis Excution
 ```
+
+&nbsp;
+
+## 4. 진행되어 있는 개발 항목
+[*.. contents*](#contents)
+
+&nbsp;
+&nbsp;
