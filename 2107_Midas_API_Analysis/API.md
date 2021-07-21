@@ -25,7 +25,9 @@
 1. [Civil API Concept](#civil-api-concept)
 2. [Civil API Setting](#civil-api-setting)
 3. [Civil API Excution](#civil-api-excution)
- ### [5. 참고](#5-참고문서)
+### [5. Civil API Prototype](#5-civil-api-prototype)
+* [PSC 계산서 프로토타입 개발 자료](#psc-계산서-프로토타입-개발-자료)
+### [6. 참고](#6-참고문서)
 + [API 데이터 정의](#api-데이터-정의)
 
 &nbsp;
@@ -324,7 +326,7 @@ ANAL       // Analysis Excution
 
 &nbsp;
 
-###Civil API Concept  
+### Civil API Concept  
 [*.. contents*](#contents)  
 ###### Civil의 Export/Impot 기능을 활용해서 Json 형태로 데이터를 관리한다.
 
@@ -395,7 +397,22 @@ POST는 해석 결과 등
 ***
 &nbsp;
 
-# 5. 참고
+# 5. Civil API Prototype
+[*.. contents*](#contents)  
+[*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/EnSolDev/pages/2088697861/PSC+API)
+
+&nbsp;
+
+## PSC 계산서 프로토타입 개발 자료
+[*.. contents*](#contents)  
+작성중..  
+
+
+&nbsp;
+***
+&nbsp;
+
+# 6. 참고
 [*.. contents*](#contents)  
 
 &nbsp;
@@ -404,6 +421,7 @@ POST는 해석 결과 등
 [*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/CIMB/pages/1118076993/API+Data+Reference)  
 
-지금까지 정의 된 여러 기본적인 구조체들의 집합체는 있으나,
-해당 내용을 정리하는 것 보다는 현재 Civil에 포진되어 있는 다양한 데이터를
-분석하고 이를 기반으로 새로운 json 데이터를 추출하는게 더 좋아 보임.
+지금까지 정의 된 여러 기본적인 구조체들의 집합체는 있으나,  
+해당 내용을 정리하는 것 보다는 현재 Civil에 포진되어 있는 다양한 데이터를  
+분석하고 이를 기반으로 새로운 json 데이터를 추출하는게 더 좋아 보임.  
+
