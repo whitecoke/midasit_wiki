@@ -21,14 +21,14 @@
     3. [Excel Sheet Function](#function-for-excel-sheet-concept)
 3. [Action](#action)
     + [Civil Doc Action List](#civil-doc-action-list)
-### [4. Civil API](#4-civil-api)
-1. [Civil API Concept](#civil-api-concept)
-2. [Civil API Setting](#civil-api-setting)
-3. [Civil API Excution](#civil-api-excution)
+### [4. Civil API ](#4-civil-api)
+1. [Civil API Concept ](#civil-api-concept)
+2. [Civil API Setting ](#civil-api-setting)
+3. [Civil API Excution ](#civil-api-excution)
 ### [5. Civil API Prototype ](#5-civil-api-prototype)
-* [PSC 계산서 프로토타입 개발 자료](#psc-계산서-프로토타입-개발-자료)
-### [6. 참고](#6-참고문서)
-+ [API 데이터 정의](#api-데이터-정의)
+* [PSC 계산서 프로토타입 개발 자료 ](#psc-계산서-프로토타입-개발-자료)
+### [6. 참고 ](#6-참고문서)
++ [API 데이터 정의 ](#api-데이터-정의)
 
 &nbsp;
 ***
