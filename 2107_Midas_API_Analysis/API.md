@@ -405,8 +405,127 @@ POST는 해석 결과 등
 
 ## PSC 계산서 프로토타입 개발 자료
 [*.. contents*](#contents)  
-작성중..  
 
+MAPI Branch의 21.06.25일자 주성님 Commit 기준,  
+
+이 아래는 Command Line 관련된 놈인가..
+
+__wg_gr / CommandInput__
+
+```cpp
+// 라인에 입력된 명령들을 처리하는 곳 인듯.
+
+Command 창에서 입력한 string 값은 CommandInput::SendKeyToInputTip 에서 처리한다.  
+CommandInput [613]에 각 String별 조건에 따라 데이터를 가져오거나 조작한다.
+
+CommandInput::SendKeyToInputTip
+{
+    auto* const pDBDoc = CDBDoc::GetDocPoint(); // DBDoc Pointer
+    
+    //Tools
+    CQueryparser Parser;                               // Parsing 전문 객체
+    auto* const pCmdMenuMgr = ICmdMenuMgr::Instance(); // Command 메뉴 매니징 Interface 객체
+
+    const auto& strContent = GetContent(); // 명령라인의 내용 얻어오기
+
+    if ( nKeyMsg == VK_RETURN ) // Key입력이 'enter'면
+    {
+        // Parser 이용
+        auto strResult = _T(""); // Parsing 결과 인가봄
+        if ( strCurPath == ">>DataBase>>" ) {         // DataBase DB?
+            pDBDoc->StartEditDB();                    // Transaction START
+            strResult = Parser.ProcessDB(strContent); // DB 갱신
+            pDBDoc->CloseEditDB();                    // Transaction CLOSE
+        }
+        
+        if ( strCurPath == ">>PythonModue>>" ) {  // Python Module?
+            strResult = Parser.RunPY(strContent); // 모듈 실행
+        }
+
+        if ( strCurPath == ">>Settings>>") {      // Settings?
+            strResult = Parser.RunST(strContent); // Setting 변경
+        }
+
+        if ( strCurPath == ">>API>>") {            // API?
+            strResult = Parser.RunAPI(strContent); // API 실행
+        }
+
+        if ( !strResult.IsEmpty() ) { // Parsing 결과가 있으면
+            if ( pDBDoc ) {
+                pDBDoc->DisplayHistoryMessage(strResult); // Parsing 결과 표시
+            }
+        }
+
+        if ( strCurPath == ">>Import Json File>>") { // Json Import
+            pDBDoc->StartEditDB();                   // Transaction START
+            Parser.OnImportJson(strContent);         // Json 파일 불러오기 (불러와서 데이터 갱신하나?)
+            pDBDoc->CloseEditDB();                   // Transaction CLOSE
+        }
+
+        if ( strCurPath == ">>Export Json File>>") { // Json Export
+            Parser.OnExportJson(strContent);         // Json 파일 불러오기 (불러와서 데이터 갱신하나?)
+        }
+
+        // AfxApp 이용
+        if ( strCurPath == ">>Open File>>") {          // File Open?
+            AfxGetApp()->OpenDocumentFile(strContent); // 모델 열기
+        }
+
+        ClearPrompt(); // 명령라인 날리기?
+    }
+}
+```
+
+__wg_base / ICmdMenuMgr__
+
+```cpp
+// Command Menu의 Export/Import 시, 동작을 결정하는 Interface인가
+// OnExportJson = 0
+// OnImportJson = 0 Method가 존재함.
+```
+
+__wg_main / AppMain__
+
+```cpp
+
+// 음 Application main 함수 인가.
+// Load Command File, New/Open/Close File을 새롭게 정의 했군?
+```
+
+__wg_main / CommandMenuMgr__
+
+```cpp
+// 위에 ICmdMenuMgr의 Sub Class인 실체인듯.
+// OnExportJson과 OnImportJson이 구현되어 있다능
+```
+
+__wg_main / MgtImport_DBG__
+
+```cpp
+// 위 CommandMenuMgr에서 사용하는 객체
+// Json 파일 Import 시 사용함.
+// 이건 또 왜 이름이 다르지?
+// 객체 이름이 CReadDBG
+```
+
+__wg_main / MgtExport_toDBG__
+
+```cpp
+// 위 CommandMenuMgr에서 사용하는 객체
+// Json파일을 Export 할때에 strPath(경로?명령?)를 해당 객체에 줌.
+// 객체 이름이 CMgrExport_toDBG
+```
+
+&nbsp;
+왠지 이놈부터는 document 리본 메뉴 인듯?
+
+__wg_main / WGenDoc__
+```cpp
+// 이놈은 Interface고, 실체는 ImplFile이 따로 있음.
+// WGenDocImplFile
+// OnFileExportGenwForDBG
+// OnFileImportGenwDBG
+```
 
 &nbsp;
 ***
