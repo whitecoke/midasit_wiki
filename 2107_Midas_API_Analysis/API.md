@@ -1,3 +1,16 @@
+<style type="text/css">
+@font-face {
+    font-family: 'Source Code Pro', monospace;
+    src: url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+}
+</style>
+
 # CONTENTS
 
 ### [1. 마이다스 API란? ](#1-마이다스-api란)
@@ -410,7 +423,8 @@ MAPI Branch의 21.06.25일자 주성님 Commit 기준,
 
 이 아래는 Command Line 관련된 놈인가..
 
-__wg_gr / CommandInput__
+<details>
+<summary style="font-weight : bold; color : #00714e">wg_gr / CommandInput</summary>
 
 ```cpp
 // 라인에 입력된 명령들을 처리하는 곳 인듯.
@@ -475,6 +489,9 @@ CommandInput::SendKeyToInputTip
     }
 }
 ```
+</details>
+
+&nbsp;
 
 __wg_base / ICmdMenuMgr__
 
