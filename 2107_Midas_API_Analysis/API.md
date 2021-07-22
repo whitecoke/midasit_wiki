@@ -1,11 +1,11 @@
 # CONTENTS
 
-### [1. 마이다스 API란?](#1-마이다스-api란)
+### [1. 마이다스 API란? ](#1-마이다스-api란)
 ### [2. API 호출 도구 (End Point)](#2-api-호출-도구)
 1. API Command Window (제품 내 커맨드창)
 2. API Set command File (Batch 파일)
 3. Global Command, GCMD (터미널 확장)
-### [3. API 문법 및 명령 규칙](#3-api-문법-및-명령-규칙)
+### [3. API 문법 및 명령 규칙 ](#3-api-문법-및-명령-규칙)
 1. [Query](#query)
    1. [LVALUE](#lvalue)
    2. [OPERATOR](#operator)
@@ -25,7 +25,7 @@
 1. [Civil API Concept](#civil-api-concept)
 2. [Civil API Setting](#civil-api-setting)
 3. [Civil API Excution](#civil-api-excution)
-### [5. Civil API Prototype](#5-civil-api-prototype)
+### [5. Civil API Prototype ](#5-civil-api-prototype)
 * [PSC 계산서 프로토타입 개발 자료](#psc-계산서-프로토타입-개발-자료)
 ### [6. 참고](#6-참고문서)
 + [API 데이터 정의](#api-데이터-정의)
