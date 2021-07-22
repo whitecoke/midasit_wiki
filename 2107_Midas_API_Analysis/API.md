@@ -1,16 +1,3 @@
-<style type="text/css">
-@font-face {
-    font-family: 'Source Code Pro', monospace;
-    src: url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    font-family: 'Source Code Pro', monospace;
-}
-</style>
-
 # CONTENTS
 
 ### [1. 마이다스 API란? ](#1-마이다스-api란)
@@ -491,32 +478,37 @@ CommandInput::SendKeyToInputTip
 ```
 </details>
 
-&nbsp;
-
-__wg_base / ICmdMenuMgr__
+<details>
+<summary style="font-weight : bold; color : #00714e">wg_base / ICmdMenuMgr</summary>
 
 ```cpp
 // Command Menu의 Export/Import 시, 동작을 결정하는 Interface인가
 // OnExportJson = 0
 // OnImportJson = 0 Method가 존재함.
 ```
+</details>
 
-__wg_main / AppMain__
+<details>
+<summary style="font-weight : bold; color : #00714e">wg_main / CommandMenuMgr : ICmdMenuMgr</summary>
+
+```cpp
+// 위에 ICmdMenuMgr의 Sub Class인 실체인듯.
+// OnExportJson과 OnImportJson이 구현되어 있다능
+```
+</details>
+
+<details>
+<summary style="font-weight : bold; color : #00714e">wg_main / AppMain</summary>
 
 ```cpp
 
 // 음 Application main 함수 인가.
 // Load Command File, New/Open/Close File을 새롭게 정의 했군?
 ```
+</details>
 
-__wg_main / CommandMenuMgr__
-
-```cpp
-// 위에 ICmdMenuMgr의 Sub Class인 실체인듯.
-// OnExportJson과 OnImportJson이 구현되어 있다능
-```
-
-__wg_main / MgtImport_DBG__
+<details>
+<summary style="font-weight : bold; color : #00714e">wg_main / MgtImport_DBG</summary>
 
 ```cpp
 // 위 CommandMenuMgr에서 사용하는 객체
@@ -524,25 +516,30 @@ __wg_main / MgtImport_DBG__
 // 이건 또 왜 이름이 다르지?
 // 객체 이름이 CReadDBG
 ```
+</details>
 
-__wg_main / MgtExport_toDBG__
+<details>
+<summary style="font-weight : bold; color : #00714e">wg_main / MgtExport_toDBG</summary>
 
 ```cpp
 // 위 CommandMenuMgr에서 사용하는 객체
 // Json파일을 Export 할때에 strPath(경로?명령?)를 해당 객체에 줌.
 // 객체 이름이 CMgrExport_toDBG
 ```
+</details>
 
 &nbsp;
 왠지 이놈부터는 document 리본 메뉴 인듯?
 
-__wg_main / WGenDoc__
+<details>
+<summary style="font-weight : bold; color : #00714e">wg_main / WGenDoc</summary>
 ```cpp
 // 이놈은 Interface고, 실체는 ImplFile이 따로 있음.
 // WGenDocImplFile
 // OnFileExportGenwForDBG
 // OnFileImportGenwDBG
 ```
+</details>
 
 &nbsp;
 ***
