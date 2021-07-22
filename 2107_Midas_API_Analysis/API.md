@@ -406,9 +406,9 @@ POST는 해석 결과 등
 ## PSC 계산서 프로토타입 개발 자료
 [*.. contents*](#contents)  
 
-MAPI Branch의 21.06.25일자 주성님 Commit 기준,  
+###### MAPI Branch의 21.06.25일자 주성님 Commit 기준,  
 
-이 아래는 Command Line 관련된 놈인가..
+`이 아래는 Command Line 관련된 놈인가..`
 
 <details>
 <summary style="font-weight : bold; color : #00714e">wg_gr / CommandInput</summary>
@@ -529,7 +529,8 @@ CommandInput::SendKeyToInputTip
 </details>
 
 &nbsp;
-왠지 이놈부터는 document 리본 메뉴 인듯?
+
+`왠지 이놈부터는 document 리본 메뉴 인듯?`
 
 <details>
 <summary style="font-weight : bold; color : #00714e">wg_main / WGenDoc</summary>
