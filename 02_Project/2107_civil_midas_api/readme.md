@@ -25,7 +25,7 @@
 1. [Civil API Concept ](#civil-api-concept)
 2. [Civil API Setting ](#civil-api-setting)
 3. [Civil API Excution ](#civil-api-excution)
-### [5. Civil API Prototype ](#5-civil-api-prototype)
+### [5. Civil API 질문사항 ](#5-civil-api-질문사항)
 * [PSC 계산서 프로토타입 개발 자료 ](#psc-계산서-프로토타입-개발-자료)
 ### [6. 참고 ](#6-참고문서)
 + [API 데이터 정의 ](#api-데이터-정의)
@@ -397,13 +397,13 @@ POST는 해석 결과 등
 ***
 &nbsp;
 
-# 5. Civil API Prototype
+# 5. Civil API 질문사항
 [*.. contents*](#contents)  
 [*Reference Documentation*](https://midasitdev.atlassian.net/wiki/spaces/EnSolDev/pages/2088697861/PSC+API)
 
 &nbsp;
 
-## PSC 계산서 프로토타입 개발 자료
+## PSC 계산서 프로토타입 개발 자료 분석
 [*.. contents*](#contents)  
 
 ###### MAPI Branch의 21.06.25일자 주성님 Commit 기준,  
