@@ -79,7 +79,7 @@ scanf_s라는 표준 함수를 사용 해야 한다. (이를 위한 경고인가
 
 ***
 
-`warning C4723: 0의 나누기가 발생할 수 있습니다.`
+`warning C4723: 0의 나누기가 발생할 수 있습니다.`  
 `warning C4723: potential divided by 0`
 
 &nbsp;
